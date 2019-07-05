@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CryptografyJulioCesarService } from './services/cryptografy-julio-cesar.service';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +9,9 @@ export class AppComponent {
   title = 'criptografia-julio-cesar';
 
   
-  constructor(private cryptografyJulioCesarService: CryptografyJulioCesarService) {
+  constructor() {
     
   }
 
-  newChallenge(event): void{
-    this.cryptografyJulioCesarService.getEncryptedText().subscribe((response) => {
-      console.log(response);
-    });
-  }
+
 }

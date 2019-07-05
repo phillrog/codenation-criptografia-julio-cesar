@@ -1,27 +1,27 @@
 <form>
   <div class="form-group">
     <label for="decimal_places">Número de casas</label>
-    <input type="text" class="form-control" id="decimal_places" disabled >    
+    <input type="text" class="form-control" [(ngModel)]="challenge.numero_casas" id="decimal_places" name="decimal_places" disabled >    
   </div>
   <div class="form-group">
     <label for="token"  >Token</label>
-      <input type="text" disabled class="form-control" id="token" >
+      <input type="text" disabled class="form-control" id="token" [(ngModel)]="challenge.token" name="token">
   </div>
   <div class="form-group">
-      <label for="cifrado"  >Cifrado</label>
+      <label for="encrypted"  >Cifrado</label>
      
-        <input type="text" disabled class="form-control" id="cifrado" >
+        <input type="text" disabled class="form-control" id="encrypted" [(ngModel)]="challenge.cifrado" name="encrypted"> 
 
     </div>
     <div class="form-group">
-        <label for="decifrado" >Decifrado</label>
+        <label for="deciphered" >Decifrado</label>
 
-          <input type="text" class="form-control" id="decifrado" >
+          <input type="text" class="form-control" id="deciphered"  [(ngModel)]="challenge.decifrado" name="deciphered" >
 
       </div>
       <div class="form-group ">
           <label for="cryptographic_summary" disabled>Resumo criptográfico</label>
  
-            <input type="text" class="form-control" id="cryptographic_summary" >
+            <input type="text" class="form-control" id="cryptographic_summary" name="cryptographic_summary" [(ngModel)]="challenge.resumo_criptografico" >
         </div>
 </form>
