@@ -1,4 +1,7 @@
+import { sha1 } from './sha1';
+
 export class JulioCesarCipher {
+    
     decimal_places: number;
 
     constructor(decimal_places?: number) {
@@ -21,5 +24,9 @@ export class JulioCesarCipher {
             decodedMessage += decodedChar
         }
         return decodedMessage
+    }
+
+    sha1Encrypt(decifrado: string): string {
+        return sha1(decifrado);
     }
 }

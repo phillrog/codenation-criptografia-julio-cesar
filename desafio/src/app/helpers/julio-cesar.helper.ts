@@ -13,4 +13,8 @@ export class JulioCesarHelper {
     decipher():void {
         this.challenge.decifrado = this.julioCesarCipher.decipher(this.challenge.cifrado);
     }
+
+    sha1Encrypt(): void {
+        this.challenge.resumo_criptografico = this.julioCesarCipher.sha1Encrypt(this.challenge.decifrado);
+    }
 }

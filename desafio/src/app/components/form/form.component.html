@@ -29,11 +29,15 @@
         
         <div class="col-1">
 
-          <button type="button" class="btn btn-success mb-2" [disabled]="!challenge.cifrado" (click)="decipher($event)">Decifrar</button>
+          <button type="button" class="btn btn-success mb-2" [disabled]="!challenge.cifrado" (click)="decipherClick($event)">Decifrar</button>
         </div>
         <div class="col-1">
 
-          <button type="button" [disabled]="!challenge.decifrado" class="btn btn-primary mb-2">Enviar</button>
+            <button type="button" class="btn btn-warning mb-2" [disabled]="!challenge.decifrado" (click)="sha1Click($event)">Sha1</button>
+          </div>
+        <div class="col-1">
+
+          <button type="button" [disabled]="!challenge.resumo_criptografico" class="btn btn-primary mb-2">Enviar</button>
 </div>
       </div>
 </form>

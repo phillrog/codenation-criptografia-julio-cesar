@@ -28,7 +28,11 @@ export class FormComponent implements OnInit {
     });
   }
 
-  decipher(event){
+  decipherClick(event){
     this.julioCesarHelper.decipher();
+  }
+
+  sha1Click(event){
+    this.julioCesarHelper.sha1Encrypt();
   }
 }
