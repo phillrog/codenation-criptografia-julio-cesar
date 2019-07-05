@@ -24,6 +24,11 @@
  
             <input type="text" class="form-control" id="cryptographic_summary" disabled name="cryptographic_summary" [(ngModel)]="challenge.resumo_criptografico" >
         </div>
+        <div class="form-group ">
+            <label for="file" disabled>Arquivo answer.json</label>
+   
+              <input type="file" class="form-control" id="file" name="file" (change)="sendResultToCodenation($event.target.files)">
+          </div>
 
         <div class="row ">
         
@@ -35,9 +40,5 @@
 
             <button type="button" class="btn btn-warning mb-2" [disabled]="!challenge.decifrado" (click)="sha1Click($event)">Sha1</button>
           </div>
-        <div class="col-1">
-
-          <button type="button" [disabled]="!challenge.resumo_criptografico" class="btn btn-primary mb-2">Enviar</button>
-</div>
       </div>
 </form>

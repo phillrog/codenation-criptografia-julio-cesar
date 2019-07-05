@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Cryptografy } from 'src/app/models/cryptografy.model';
 import { CryptografyJulioCesarService } from 'src/app/services/cryptografy-julio-cesar.service';
 import { JulioCesarHelper } from 'src/app/helpers/julio-cesar.helper';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-form',
@@ -13,7 +14,8 @@ export class FormComponent implements OnInit {
   challenge: Cryptografy = new Cryptografy();
   julioCesarHelper: JulioCesarHelper;
 
-  constructor(private cryptografyJulioCesarService: CryptografyJulioCesarService) { 
+  constructor(private cryptografyJulioCesarService: CryptografyJulioCesarService,
+    private toastr: ToastrService){
     this.newChallenge();
     
   }
@@ -34,5 +36,12 @@ export class FormComponent implements OnInit {
 
   sha1Click(event){
     this.julioCesarHelper.sha1Encrypt();
+  }
+
+  sendResultToCodenation(files: FileList){
+    const fileToUpload = files.item(0);
+    this.cryptografyJulioCesarService.postDecryptedText(fileToUpload).subscribe((response: any) => {
+      this.toastr.success('Atenção', `Enviado com sucesso - ${JSON.stringify(response)}`);
+    });
   }
 }
